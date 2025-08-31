@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: rupeexfer-db
+    environment:
+      POSTGRES_DB: rupeexfer
+      POSTGRES_USER: rupeexfer
+      POSTGRES_PASSWORD: rupeexfer123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rupeexfer -d rupeexfer"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rupeexfer-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:postgresql://postgres:5432/rupeexfer
+      DB_USERNAME: rupeexfer
+      DB_PASSWORD: rupeexfer123
+      JWT_SECRET: rupeexferSecretKey1234567890123456789012
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
