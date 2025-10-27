@@ -1,4 +1,4 @@
-# RupeeXfer — Secure Fund Transfer API
+# Rupee Transfer — Secure Fund Transfer API
 
 [![Java](https://img.shields.io/badge/Java-17-orange?logo=java)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.0-brightgreen?logo=spring)](https://spring.io/projects/spring-boot)
