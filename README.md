@@ -7,22 +7,22 @@
 [![Docker](https://img.shields.io/badge/Docker-✓-blue?logo=docker)](https://www.docker.com/)
 [![Swagger](https://img.shields.io/badge/Swagger-✓-green?logo=swagger)](https://swagger.io/)
 
-## 🚀 Overview
+##  Overview
 
 RupeeXfer is a high-performance, secure fund transfer API that implements banking-grade transaction management with ACID compliance. Built with Spring Boot 3 and Java 17, it demonstrates modern backend development practices including distributed transactions, optimistic locking, and JWT-based security.
 
-## ✨ Features
+## Features
 
-- 💰 **Atomic Money Transfers** - ACID-compliant fund transfers with rollback support
-- 🔒 **Optimistic Locking** - Prevents double-spending in high-concurrency scenarios
-- 📜 **Immutable Transaction Ledger** - Tamper-proof record of all transactions
-- 🔑 **JWT Authentication** - Stateless, secure user authentication
-- 📚 **Comprehensive API Docs** - Interactive documentation with Swagger UI
-- 🐳 **Docker Support** - Containerized deployment with Docker Compose
-- 🧪 **Test Coverage** - Unit, integration, and concurrency tests
-- ⚡ **Performance Optimized** - Connection pooling, batch processing, and caching
+-  **Atomic Money Transfers** - ACID-compliant fund transfers with rollback support
+-  **Optimistic Locking** - Prevents double-spending in high-concurrency scenarios
+-  **Immutable Transaction Ledger** - Tamper-proof record of all transactions
+-  **JWT Authentication** - Stateless, secure user authentication
+-  **Comprehensive API Docs** - Interactive documentation with Swagger UI
+-  **Docker Support** - Containerized deployment with Docker Compose
+-  **Test Coverage** - Unit, integration, and concurrency tests
+-  **Performance Optimized** - Connection pooling, batch processing, and caching
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -30,7 +30,7 @@ RupeeXfer is a high-performance, secure fund transfer API that implements bankin
 └───────────────────────────────┬─────────────────────────────┘
                                 │
 ┌───────────────────────────────▼─────────────────────────────┐
-│                      API Gateway (Spring Cloud Gateway)     │
+│                API Gateway (Spring Cloud Gateway)           │
 └───────────────────────────────┬─────────────────────────────┘
                                 │
 ┌───────────────────────────────▼─────────────────────────────┐
@@ -56,7 +56,7 @@ RupeeXfer is a high-performance, secure fund transfer API that implements bankin
     └────────────────────┘        └────────────────────┘
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Core**: Java 17, Spring Boot 3.1.0
 - **Security**: Spring Security 6.1.0, JWT, BCrypt
@@ -67,7 +67,7 @@ RupeeXfer is a high-performance, secure fund transfer API that implements bankin
 - **Containerization**: Docker 20.10+, Docker Compose
 - **Testing**: JUnit 5, TestContainers, MockMVC
 
-## 🚀 Quickstart
+##  Quickstart
 
 ### Local Development (H2 Database)
 
@@ -98,7 +98,7 @@ docker-compose up --build
 | `JWT_SECRET`       | `your-256-bit-secret`           | JWT signing key                |
 | `JWT_EXPIRATION_MS`| `86400000` (24h)                | JWT expiration time in ms      |
 
-## 📚 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
@@ -108,7 +108,7 @@ docker-compose up --build
 | `POST` | `/api/transactions/transfer` | Transfer funds | Yes |
 | `GET` | `/api/accounts/{accountNumber}/transactions` | Transaction history | Yes |
 
-## 💻 Example Requests
+##  Example Requests
 
 ### 1. Create Account
 ```bash
@@ -140,7 +140,7 @@ curl 'http://localhost:8080/api/accounts/ACC123456/transactions?page=0&size=10' 
   -H 'Authorization: Bearer YOUR_JWT_TOKEN'
 ```
 
-## 🧪 Testing
+##  Testing
 
 Run the complete test suite:
 ```bash
@@ -151,7 +151,7 @@ Test categories:
 - Unit tests (`*Test.java`)
 - Integration tests (`*IT.java`)
 
-## 🧠 Design Choices
+##  Design Choices
 
 ### Optimistic Locking
 - Prevents lost updates in concurrent transfer scenarios
